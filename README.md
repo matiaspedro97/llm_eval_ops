@@ -61,6 +61,9 @@ This project uses Weight & Biases (W&B) and Weave for tracking and visualizing e
 
 You can find the official W&B repository here: [link](https://wandb.ai/matiaspedro97/llm_logical_eval)
 
+You can also find Weave's tracking sectio here: [link](https://wandb.ai/matiaspedro97/llm_logical_eval/weave)
+
+
 ## Example Results
 Below is a screenshot of the evaluation results, showcasing the LLMs evaluation when tracked by Weave and W&B. The LLMs were instructed to guess the outcome of complex charades (in Portuguese).
 
