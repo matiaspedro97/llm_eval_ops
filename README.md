@@ -56,8 +56,8 @@ Using Weave framework to evaluate and assess the performance of Large Language M
 └── setup.cfg          <- Configuration file for formatting and linting tools.
 ```
 
-## Weight & Biases Integration
-This project uses Weight & Biases (W&B) for tracking and visualizing experiments, model performance, and metrics. W&B provides powerful tools to monitor and compare your model's results in real time.
+## Weight & Biases and Weave Integration
+This project uses Weight & Biases (W&B) and Weave for tracking and visualizing experiments, model performance, and metrics. W&B provides powerful tools to monitor and compare your model's results in real time.
 
 You can find the official W&B repository here: [link](https://wandb.ai/matiaspedro97/llm_logical_eval)
 
