@@ -9,53 +9,66 @@ Using Weave framework to evaluate and assess the performance of Large Language M
 ## Project Organization
 
 ```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
+|── LICENSE            <- Open-source license if one is chosen
+|── README.md          <- The README file that describes the project.
+|
+|── docs               <- Documentation files or directories.
+|
+|── models             <- Pre-trained models, serialized outputs, or model predictions.
+|
+|── notebooks          <- Jupyter notebooks for exploratory or interactive work.
+|
+|── references         <- Manuals, guides, and other explanatory materials.
+|
+|── reports            <- Generated outputs such as analysis, reports, and plots.
+|   └── figures        <- Visual outputs like charts and figures used in reporting.
+|
+|── requirements.txt   <- Dependency list to replicate the project environment.
+|
+|── llm_eval_ops       <- Main source code for the project.
+|    │
+|    ├── __init__.py    <- Makes `llm_eval_ops` a Python module.
+|    │
+|    ├── config.py      <- Centralized configuration for the entire project.
+|    │
+|    ├── data
+|    │   ├── make_dataset.py <- Script to create datasets from raw inputs.
+|    │   └── __pycache__    <- Compiled Python files for the `data` module.
+|    │
+|    ├── evaluation      <- Evaluation scripts and utilities.
+|    │   ├── eval.py     <- Evaluation scripts for assessing model performance.
+|    │   ├── __init__.py <- Makes `evaluation` a Python module.
+|    │   └── __pycache__ <- Compiled Python files for the `evaluation` module.
+|    │
+|    ├── model           <- Model-related scripts and utilities.
+|    │   ├── llm.py      <- Scripts to load, fine-tune, or manage LLMs.
+|    │   ├── __init__.py <- Makes `model` a Python module.
+|    │   └── __pycache__ <- Compiled Python files for the `model` module.
+|    │
+|    ├── run             <- Scripts for orchestrating pipeline execution.
+|    │   ├── run_pipe.py <- Script to orchestrate the end-to-end pipeline.
+|    │   ├── __init__.py <- Makes `run` a Python module.
+|    │   └── __pycache__ <- Compiled Python files for the `run` module.
+|    |
+|    │──init__.py         <- Makes `llm_eval_ops` a Python module.
+|    |──config.py   <- Pipeline-specific configuration settings.
 │
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         llm_eval_ops and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── llm_eval_ops   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes llm_eval_ops a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+└── setup.cfg          <- Configuration file for formatting and linting tools.
 ```
+
+## Weight & Biases Integration
+This project uses Weight & Biases (W&B) for tracking and visualizing experiments, model performance, and metrics. W&B provides powerful tools to monitor and compare your model's results in real time.
+
+You can find the official W&B repository here: [link](https://wandb.ai/matiaspedro97/llm_logical_eval)
+
+## Example Results
+Below is a screenshot of the evaluation results, showcasing the LLMs evaluation when tracked by Weave and W&B. The LLMs were instructed to guess the outcome of complex charades (in Portuguese).
+
+Check the full example here: [link](https://wandb.ai/matiaspedro97/llm_logical_eval/weave/compare-evaluations?evaluationCallIds=%5B%220193a7e0-2799-7b00-97d0-cf9e67131989%22%2C%220193a7de-ece6-7753-b3fe-fecf9551cc91%22%2C%220193a7de-7266-79f2-b816-d990fe571077%22%2C%220193a7dd-4933-7130-81fe-3918235ca204%22%2C%220193a7db-cac7-71a1-85d9-1bac3cb0d23e%22%5D&metrics=%7B%22has_response.existing_response%22%3Atrue%2C%22correct_response.correct_response%22%3Atrue%2C%22llm_eval.llm_judge%22%3Atrue%2C%22Model+Latency+%28avg%29%22%3Atrue%2C%22Total+Tokens+%28avg%29%22%3Atrue%7D)
+
+
+![screenshot](reports/figures/performance_viz_llm.png)
+
 
 --------
 
