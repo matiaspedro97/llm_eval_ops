@@ -56,6 +56,54 @@ Using Weave framework to evaluate and assess the performance of Large Language M
 └── setup.cfg          <- Configuration file for formatting and linting tools.
 ```
 
+## Project Setup
+
+To set up the project environment, follow these steps:
+
+1. **Build Conda Environment:**
+   First, create the Conda environment using the `environment.yml` file. This file contains all the necessary dependencies for the project.
+
+   ```bash
+   conda env create -f environment.yml
+   ```
+
+   Activate the Conda environment:
+
+   ```bash
+   conda activate python3.10
+   ```
+
+2. **Set Up Virtualenv:**
+   After setting up the Conda environment, create a virtual environment using `virtualenv` to manage additional dependencies or for isolated development.
+
+   ```bash
+   python -m venv .venv-dev
+   ```
+
+   Activate the virtual environment:
+
+   - On Windows:
+
+     ```bash
+     .venv-dev\Scripts\activate
+     ```
+
+   - On Unix or MacOS:
+
+     ```bash
+     source .venv-dev/bin/activate
+     ```
+
+3. **Install Dependencies:**
+   Finally, install the project dependencies using `requirements-dev.txt`.
+
+   ```bash
+   pip install -r requirements/requirements-dev.txt
+   ```
+
+This setup ensures that you have a consistent and isolated environment for running the project.
+
+
 ## Weight & Biases and Weave Integration
 This project uses Weight & Biases (W&B) and Weave for tracking and visualizing experiments, model performance, and metrics. W&B provides powerful tools to monitor and compare your model's results in real time.
 
